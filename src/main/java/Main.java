@@ -49,16 +49,9 @@ public class Main {
         double totalCost = quantityOfUnits * pricePerUnit + shippingFee;
 
         // Formatted Print Statement
-        String response = (
-                "Product  |  Quantity  |  Price Per Unit  |  Distance in Miles  |  Total Price"
-                + "\n-----------------------------------------------------------------------------\n")
-                + product + "\t\t"
-                + quantityOfUnits + " Units\t\t"
-                + String.format("$%.2f", pricePerUnit) + "\t\t\t\t\t"
-                + distanceInMiles + "\t\t\t"
-                + String.format("$%.2f", totalCost);
-
+        String response = String.format("%-13s%-14s%-11s%-11s%s\n", "Product", "Quantity", "Price", "Miles", "Total")
+                + String.format("%-13s%-14s%-11s%-11s%s\n", "  ---  ", "  ----  ", " --- ", " --- ", " --- ")
+                + String.format("%-15s%-12d$%-11.2f%-10.1f$%.2f", product, quantityOfUnits, pricePerUnit, distanceInMiles, totalCost);
         System.out.println(response);
-
     }
 }
